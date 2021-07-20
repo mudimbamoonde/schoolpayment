@@ -37,10 +37,10 @@ if (isset($_SESSION["id"])){
 
                         $username  = trim($_POST["username"]);
                         $pass  = trim($_POST["password"]);
-                        $accessLevel = trim($_POST["accesslevel"]);
+                        // $accessLevel = trim($_POST["accesslevel"]);
 
                         $hashed = md5($pass);
-                        $sql = "SELECT*FROM users WHERE username = ? OR password = ? ";
+                        $sql = "SELECT*FROM users WHERE username = ? AND password = ? ";
                         $binder = $con->prepare($sql);
                         $binder->bindValue(1,$username);
                         $binder->bindValue(2,$hashed);
@@ -57,7 +57,7 @@ if (isset($_SESSION["id"])){
                                 7	accountLevel
                                 8	username
                                 9	status
-                             * */
+                             */
                             //$_SESSION["AccessLevel"] = $accessLevel;
                             $_SESSION["id"] = $row->ID;
                             $_SESSION["fname"] = $row->firstName;
@@ -82,7 +82,7 @@ if (isset($_SESSION["id"])){
                               <h4>Wrong Password!</h4>
                               <a href='#' class='close' data-dismiss ='alert' aria-label ='close'>&times;</a>
                               <b>Enter a correct Password/Username!</b>
-                           </div>";
+                           </div>".md5($pass);
                         }
                     }
                     ?>

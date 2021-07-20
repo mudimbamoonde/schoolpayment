@@ -5,6 +5,8 @@ if (isset($_SESSION["id"])){
     if ($_SESSION["accountLevel"]=="student"){
         header("location:student.php");
     }
+}else{
+    header("location:logout.php");
 }
 ?>
 <!DOCTYPE html>

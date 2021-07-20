@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-    <p class="back-link">Designed and Developed by <a href="https://www.icuzambia.net">ZRDC</a></p>
+    <p class="back-link">Designed and Developed by Bridget Mwenesha</p>
 </div>
 </div><!--/.row-->
 </div>	<!--/.main-->
